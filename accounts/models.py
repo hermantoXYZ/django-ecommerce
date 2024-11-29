@@ -3,10 +3,9 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
 class User(AbstractUser): 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    is_admin = models.BooleanField('is admin', default=False)
-    is_staff = models.BooleanField('is staff', default=False)
-    is_pelanggan = models.BooleanField('is pelanggan', default=False)
+    is_admin = models.BooleanField('Is admin', default=False)
+    is_staff = models.BooleanField('Is staff', default=False)
+    is_pelanggan = models.BooleanField('Is pelanggan', default=False)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     image = models.ImageField(upload_to='image/', null=True, blank=True)
     adress = models.CharField(max_length=255, null=True, blank=True)
